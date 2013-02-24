@@ -14,7 +14,7 @@ def main():
     home = os.path.expanduser('~')
     print('Set user home directory to: {0}'.format(home))
 
-    files = os.path.join(os.path.abspath('.'), 'files')
+    files = os.path.join(os.path.abspath('.'), 'default')
     print('Copying configuration files from: {0}'.format(files))
 
     for element in os.listdir(files):
