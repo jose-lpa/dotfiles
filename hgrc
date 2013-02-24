@@ -1,0 +1,20 @@
+[ui]
+username = José L. Patiño <jose.lpa@gmail.com>
+verbose = True
+editor = vim
+
+[extensions]
+hgext.extdiff =
+hgext.graphlog =
+color =
+[extdiff]
+# In order for this to work, you must have `colordiff` installed.
+cmd.cdiff = colordiff
+opts.cdiff =
+[color]
+status.unknown = yellow bold
+diff.file_a = red bold underline
+diff.file_b = green bold underline
+diff.hunk = blue bold
+diff.deleted = red bold
+diff.inserted = green bold
