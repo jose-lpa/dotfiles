@@ -1,0 +1,12 @@
+[submodule "default/vim/bundle/nerdtree"]
+	path = default/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "default/vim/bundle/python-mode"]
+	path = default/vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
+[submodule "default/vim/bundle/tagbar"]
+	path = default/vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "default/vim/bundle/vim-colors-solarized"]
+	path = default/vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
