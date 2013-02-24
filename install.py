@@ -1,4 +1,7 @@
+#!/usr/bin/env python
+
 import os
+import shutil
 import argparse
 
 
@@ -24,13 +27,17 @@ def main():
         # Create the symlink in home directory.
         try:
             os.symlink(origin, link)
-            print('Created configuration file {0}'.format(link))
+            print('Linked configuration {0} to {1}'.format(origin, link))
         except OSError:
             if args.overwrite:
-                print('Removing symlink {0}'.format(link))
-                os.remove(link)
+                print('Removing previous configuration {0}'.format(link))
+                try:
+                    os.remove(link)
+                except OSError:
+                    # Tried to remove a directory and failed. Go with `rmtree`.
+                    shutil.rmtree(link)
                 os.symlink(origin, link)
-                print('\tCreated new configuration file {0}'.format(link))
+                print('\tLinked configuration {0} to {1}'.format(origin, link))
             else:
                 print('{0} exists. Skipping...'.format(link))
 
