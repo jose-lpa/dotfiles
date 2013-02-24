@@ -1,4 +1,13 @@
 import os
+import argparse
+
+
+parser = argparse.ArgumentParser(description='Install the configuration files '
+                                             'for some system utilities.')
+parser.add_argument('-o', '--overwrite', dest='overwrite', action='store_true',
+                    help='Overwrite the existing dotfiles in home directory.')
+
+args = parser.parse_args()
 
 
 def main():
@@ -17,7 +26,13 @@ def main():
             os.symlink(origin, link)
             print('Created configuration file {0}'.format(link))
         except OSError:
-            pass
+            if args.overwrite:
+                print('Removing symlink {0}'.format(link))
+                os.remove(link)
+                os.symlink(origin, link)
+                print('\tCreated new configuration file {0}'.format(link))
+            else:
+                print('{0} exists. Skipping...'.format(link))
 
 
 if __name__ == '__main__':
