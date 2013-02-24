@@ -3,13 +3,13 @@ PS1="\[\e[33m\]\u\e[00m\]@\e[32m\]\h\[\e[00m\]:\[\e[34m\]\w\[\e[00m\]\$ "
 
 # Don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options.
-HISTCONTROL=ignoreboth
+export HISTCONTROL=ignoreboth
 
 # Append to the history file, don't overwrite it.
 shopt -s histappend
 
 # History size up to 1000 commands.
-HISTSIZE = 1000
+export HISTSIZE=1000
 
 # Make less more friendly for non-text input files, see lesspipe(1).
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
