@@ -38,3 +38,10 @@ eval "$(rbenv init -)"
 # Set your favorite editor here.
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
+
+# Append /usr/local/bin to the path.
+export PATH=/usr/local/bin:/usr/local/share/python/:$PATH
+
+# UTF-8 terminal support.
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
