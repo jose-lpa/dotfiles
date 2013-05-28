@@ -10,3 +10,6 @@
 [submodule "default/vim/bundle/vim-colors-solarized"]
 	path = default/vim/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "default/vim/bundle/indentLine"]
+	path = default/vim/bundle/indentLine
+	url = git@github.com:Yggdroot/indentLine.git
