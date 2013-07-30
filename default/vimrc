@@ -9,6 +9,11 @@ set number
 set nocompatible
 
 
+" --- Search options
+set incsearch
+set hlsearch
+
+
 " --- Syntax highlighting ---
 syntax enable
 set background=dark
