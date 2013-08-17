@@ -35,7 +35,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # Check for rbenv.
-if command -v rbenv > /dev/null 2&>1; then eval "$(rbenv init -)"; fi
+if command -v rbenv > /dev/null 2>&1; then eval "$(rbenv init -)"; fi
 
 # Set your favorite editor here.
 VISUAL=vim; export VISUAL
