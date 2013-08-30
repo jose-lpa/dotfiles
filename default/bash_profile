@@ -44,8 +44,20 @@ EDITOR=vim; export EDITOR
 # Append /usr/local/bin to the path.
 export PATH=/usr/local/bin:/usr/local/share/python/:$PATH
 
-# Append Postgres.app executablesto the path.
-export PATH=/Applications/Postgres.app/Contents/MacOS/bin/:$PATH
+# Append Postgres.app executables to the path.
+if [ -d /Applications/Postgres.app ]; then
+    export PATH=/Applications/Postgres.app/Contents/MacOS/bin/:$PATH
+fi
+
+# Virtualenvwrapper artifacts.
+if [ -f /usr/local/share/python/virtualenvwrapper.sh ]; then
+    source /usr/local/share/python/virtualenvwrapper.sh
+elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/share/python/virtualenvwrapper.sh
+fi
+
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
 # UTF-8 terminal support.
 export LC_CTYPE=en_US.UTF-8
