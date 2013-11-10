@@ -59,7 +59,7 @@ fi
 if [ -f /usr/local/share/python/virtualenvwrapper.sh ]; then
     source /usr/local/share/python/virtualenvwrapper.sh
 elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/share/python/virtualenvwrapper.sh
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 export WORKON_HOME=$HOME/.virtualenvs
