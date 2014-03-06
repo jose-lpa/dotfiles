@@ -2,11 +2,18 @@
 username = José L. Patiño <jose.lpa@gmail.com>
 verbose = True
 editor = vim
+merge = vimdiff
+ignore = ~/.hgignore_global
+
+[pager]
+pager = LESS='FRX' less
 
 [extensions]
 hgext.extdiff =
 hgext.graphlog =
 color =
+shelve =
+pager =
 [extdiff]
 # In order for this to work, you must have `colordiff` installed.
 cmd.cdiff = colordiff
