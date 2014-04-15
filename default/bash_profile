@@ -1,7 +1,7 @@
 # Colorize the prompt.
 yellow=$(tput setaf 3)
 green=$(tput setaf 2)
-blue=$(tput setaf 4)
+blue=$(tput setaf 104)
 bold=$(tput bold)
 reset=$(tput sgr0)
 
