@@ -15,6 +15,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
 Bundle 'majutsushi/tagbar'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'vim-scripts/closetag.vim'
+Bundle 'phleet/vim-mercenary'
 
 
 " --- Filetype plugin
@@ -81,3 +83,6 @@ endif
 
 colorscheme solarized
 
+" --- HTML automatic tag closing ---
+autocmd Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
+let g:closetag_html_style=1
