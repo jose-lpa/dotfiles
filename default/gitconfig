@@ -1,14 +1,21 @@
 [user]
-	name = José L. Patiño
-	email = jose.lpa@gmail.com
+    name = José L. Patiño
+    email = jose.lpa@gmail.com
     editor = vim
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    diff = auto
+    status = auto
+    branch = auto
 [diff]
     tool = vimdiff
 [core]
-	autocrlf = input
+    autocrlf = input
 [push]
-	default = simple
+    default = simple
+[alias]
+    # Git logging makeup.
+    glog = log --graph --decorate=full
+
+    # A more compact logging version to show just the commit hashes + messages in
+    # a nice graph.
+    log-compact = log --graph --decorate --pretty=oneline --abbrev-commit --abbrev=8
