@@ -19,3 +19,11 @@
     # A more compact logging version to show just the commit hashes + messages in
     # a nice graph.
     log-compact = log --graph --decorate --pretty=oneline --abbrev-commit --abbrev=8
+
+    # Some useful statistics. Shamelessly stolen from the book "Git Recipes" (Apress),
+    # from Wlodzimierz Gajda: https://github.com/gajdaw-git-recipes/aliases
+    l = log --oneline --abbrev-commit --abbrev=4 -25
+
+    days = "!days() { git log --pretty=format:%cd --date=short | uniq; }; days"
+
+    stat = "!stat() { echo -n "Number of revisions:"; git log --oneline | wc -l; echo -n "Number of developers:"; git shortlog -s | wc -l; echo -n "Number of days:"; git days | wc -l; echo -n "The working directory:"; du -h -s --exclude=.git; echo -n "The git directory:"; du -h -s .git; echo -n "Number of files in the working dir:"; git ls-files | wc -l; }; stat"
