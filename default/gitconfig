@@ -26,4 +26,4 @@
 
     days = "!days() { git log --pretty=format:%cd --date=short | uniq; }; days"
 
-    stat = "!stat() { echo -n "Number of revisions:"; git log --oneline | wc -l; echo -n "Number of developers:"; git shortlog -s | wc -l; echo -n "Number of days:"; git days | wc -l; echo -n "The working directory:"; du -h -s --exclude=.git; echo -n "The git directory:"; du -h -s .git; echo -n "Number of files in the working dir:"; git ls-files | wc -l; }; stat"
+    stat = "!stat() { echo "Number of revisions:" `git log --oneline | wc -l`; echo "Number of developers:" `git shortlog -s | wc -l`; echo "Number of days:" `git days | wc -l`; echo "The working directory:" `du -h -s -I=.git`; echo "The git directory:" `du -h -s .git`; echo "Number of files in the working dir:" `git ls-files | wc -l`; }; stat"
