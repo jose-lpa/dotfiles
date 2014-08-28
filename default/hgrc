@@ -8,6 +8,9 @@ ignore = ~/.hgignore_global
 [pager]
 pager = LESS='FRX' less
 
+[alias]
+revert! = revert --no-backup
+
 [extensions]
 hgext.extdiff =
 hgext.graphlog =
