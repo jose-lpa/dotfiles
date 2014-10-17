@@ -6,10 +6,10 @@ filetype off
 
 
 " --- Vundle plugins management
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'klen/python-mode'
@@ -17,6 +17,8 @@ Bundle 'majutsushi/tagbar'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'phleet/vim-mercenary'
+
+call vundle#end()
 
 
 " --- Filetype plugin
