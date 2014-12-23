@@ -14,8 +14,11 @@ export HISTCONTROL=ignoreboth
 # Append to the history file, don't overwrite it.
 shopt -s histappend
 
-# History size up to 1000 commands.
-export HISTSIZE=1000
+# History size up to 2000 commands.
+export HISTSIZE=2000
+
+# History format is better with timestamps.
+export HISTTIMEFORMAT="%d/%m/%y %T "
 
 # Make less more friendly for non-text input files, see lesspipe(1).
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
