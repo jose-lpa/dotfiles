@@ -43,19 +43,22 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+# Append /usr/local/bin to the path.
+export PATH=/usr/local/bin:/usr/local/share/python/:$PATH
+
 # Check for rbenv.
 if command -v rbenv > /dev/null 2>&1; then eval "$(rbenv init -)"; fi
+
+# Check for pyenv.
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # Set your favorite editor here.
 VISUAL=vim; export VISUAL
 EDITOR=vim; export EDITOR
 
-# Append /usr/local/bin to the path.
-export PATH=/usr/local/bin:/usr/local/share/python/:$PATH
-
 # Append Postgres.app executables to the path.
 if [ -d /Applications/Postgres.app ]; then
-    export PATH=/Applications/Postgres.app/Contents/MacOS/bin/:$PATH
+    export PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin/:$PATH
 fi
 
 # Virtualenvwrapper artifacts.
@@ -72,3 +75,9 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+# Point to pyenv repo.
+if [ -d $HOME/.pyenv ]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    # Add path for `pyenv` command line utility.
+    export PATH="$PYENV_ROOT/bin:$PATH"
+fi
