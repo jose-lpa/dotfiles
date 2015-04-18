@@ -61,16 +61,6 @@ if [ -d /Applications/Postgres.app ]; then
     export PATH=/Applications/Postgres.app/Contents/Versions/9.3/bin/:$PATH
 fi
 
-# Virtualenvwrapper artifacts.
-if [ -f /usr/local/share/python/virtualenvwrapper.sh ]; then
-    source /usr/local/share/python/virtualenvwrapper.sh
-elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
-
-export WORKON_HOME=$HOME/.virtualenvs
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-
 # UTF-8 terminal support.
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -80,4 +70,20 @@ if [ -d $HOME/.pyenv ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     # Add path for `pyenv` command line utility.
     export PATH="$PYENV_ROOT/bin:$PATH"
+fi
+
+# Virtualenvwrapper artifacts.
+if [ -f /usr/local/share/python/virtualenvwrapper.sh ]; then
+    source /usr/local/share/python/virtualenvwrapper.sh
+elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
+
+export VIRTUALENVWRAPPER_PYTHON=`which python`
+export VIRTUALENVWRAPPER_VIRTUALENV=`which virtualenv`
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+
+if [ -f /usr/local/bin/pyenv-virtualenvwrapper ]; then
+    pyenv virtualenvwrapper
 fi
