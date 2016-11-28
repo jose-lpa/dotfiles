@@ -39,6 +39,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" For html/js files, 2 spaces
+autocmd Filetype html,css setlocal ts=2 sw=2 expandtab
+
 " Python smart indentation definitions
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
@@ -81,10 +84,18 @@ if !has('gui_running')
     set t_Co=256
     let g:solarized_termcolors=256
     let g:solarized_termtrans=1
+
+    " --- Deactivate Rope due to heaviness while working with Vim GUIs ---
+    let g:pymode_rope = 0
 endif
 
 colorscheme solarized
 
+
 " --- HTML automatic tag closing ---
 autocmd Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim 
 let g:closetag_html_style=1
+
+
+" --- NERDTree ignores ---
+let NERDTreeIgnore = ['\.pyc$']
