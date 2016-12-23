@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # This command simply adds a new user to an `htpasswd` file for nginx server.
 # It uses openssl to generate the password hash which will be read by nginx
