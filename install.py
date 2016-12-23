@@ -5,10 +5,13 @@ import shutil
 import argparse
 
 
-parser = argparse.ArgumentParser(description='Install the configuration files '
-                                             'for some system utilities.')
-parser.add_argument('-o', '--overwrite', dest='overwrite', action='store_true',
-                    help='Overwrite the existing dotfiles in home directory.')
+parser = argparse.ArgumentParser(
+    description='Install the configuration files for some system utilities.'
+)
+parser.add_argument(
+    '-o', '--overwrite', dest='overwrite', action='store_true',
+    help='Overwrite the existing dotfiles in home directory.'
+)
 
 args = parser.parse_args()
 
