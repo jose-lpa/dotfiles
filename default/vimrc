@@ -85,7 +85,7 @@ if !has('gui_running')
     set t_Co=256
     let g:solarized_termcolors=256
     let g:solarized_termtrans=1
-
+else
     " --- Deactivate Rope due to heaviness while working with Vim GUIs ---
     let g:pymode_rope = 0
 endif
