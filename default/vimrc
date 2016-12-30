@@ -2,6 +2,7 @@
 set ruler
 set number
 set nocompatible
+set backspace=start,eol,indent
 filetype off
 
 
