@@ -18,6 +18,8 @@ Bundle 'majutsushi/tagbar'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'vim-scripts/closetag.vim'
 Bundle 'phleet/vim-mercenary'
+Bundle 'leafgarland/typescript-vim'
+Bundle 'fatih/vim-go'
 
 call vundle#end()
 
@@ -41,7 +43,7 @@ set shiftwidth=4
 set expandtab
 
 " For html/js files, 2 spaces
-autocmd Filetype html,css setlocal ts=2 sw=2 expandtab
+autocmd Filetype html,css,javascript,typescript setlocal ts=2 sw=2 expandtab
 
 " Python smart indentation definitions
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
