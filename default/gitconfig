@@ -13,6 +13,7 @@
     excludesfile = ~/.gitignore
 [push]
     default = simple
+    followTags = true
 [alias]
     # Git logging makeup.
     glog = log --graph --decorate=full
