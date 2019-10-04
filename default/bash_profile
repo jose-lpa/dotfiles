@@ -1,9 +1,11 @@
 # Colorize the prompt.
-yellow=$(tput setaf 3)
-green=$(tput setaf 2)
-blue=$(tput setaf 104)
-bold=$(tput bold)
-reset=$(tput sgr0)
+if tty -s; then
+    yellow=$(tput setaf 3)
+    green=$(tput setaf 2)
+    blue=$(tput setaf 104)
+    bold=$(tput bold)
+    reset=$(tput sgr0)
+fi
 
 PS1="\[$yellow\]\u\[$reset\]@\[$green\]\h\[$reset\]:\[$blue$bold\]\w\[$reset\]\$ "
 
