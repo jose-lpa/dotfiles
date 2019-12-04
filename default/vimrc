@@ -48,6 +48,9 @@ autocmd Filetype html,css,javascript,typescript,yaml,yml setlocal ts=2 sw=2 expa
 " Python smart indentation definitions
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
+" Jenkinsfile syntax highlighting
+autocmd BufNewFile,BufRead Jenkinsfile* setf groovy
+
 
 " --- Code folding
 " This allows you to be inside a method and type 'za' to open and close a fold
