@@ -71,7 +71,9 @@ fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # Virtualenvwrapper artifacts.
-if [ -f /usr/local/share/python/virtualenvwrapper.sh ]; then
+if [ -f $HOME/.pyenv/plugins/pyenv-virtualenvwrapper/bin/pyenv-virtualenvwrapper ]; then
+    pyenv virtualenvwrapper
+elif [ -f /usr/local/share/python/virtualenvwrapper.sh ]; then
     source /usr/local/share/python/virtualenvwrapper.sh
 elif [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
@@ -84,4 +86,9 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 
 if [ -f /usr/local/bin/pyenv-virtualenvwrapper ]; then
     pyenv virtualenvwrapper
+fi
+
+# Poetry - Python dependencies management.
+if [ -d $HOME/.poetry ]; then
+    export PATH="$HOME/.poetry/bin:$PATH"
 fi
