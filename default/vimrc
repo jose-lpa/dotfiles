@@ -3,6 +3,7 @@ set ruler
 set number
 set nocompatible
 set backspace=start,eol,indent
+set encoding=utf8
 filetype off
 
 
@@ -10,16 +11,19 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Bundle 'gmarik/Vundle.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'scrooloose/nerdtree'
-Bundle 'klen/python-mode'
-Bundle 'majutsushi/tagbar'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'vim-scripts/closetag.vim'
-Bundle 'phleet/vim-mercenary'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'fatih/vim-go'
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+Plugin 'klen/python-mode'
+Plugin 'majutsushi/tagbar'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/closetag.vim'
+Plugin 'phleet/vim-mercenary'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'fatih/vim-go'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'hashivim/vim-terraform'
 
 call vundle#end()
 
@@ -43,7 +47,7 @@ set shiftwidth=4
 set expandtab
 
 " For selected files like HTML, JavaScript or YAML, 2 spaces
-autocmd Filetype html,css,javascript,typescript,yaml,yml setlocal ts=2 sw=2 expandtab
+autocmd Filetype html,css,javascript,typescript,yaml,yml,tf,tfvars setlocal ts=2 sw=2 expandtab
 
 " Python smart indentation definitions
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
